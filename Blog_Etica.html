@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Ético Individual - Cristian Cifuentes</title>
+    <style>
+        /* --- ESTILOS GENERALES Y LAYOUT --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ecf0f1; /* Gris claro */
+            color: #2c3e50; /* Azul oscuro */
+        }
+        header {
+            background-color: #34495e; /* Azul oscuro */
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .main-nav {
+            background-color: #1abc9c; /* Turquesa */
+            padding: 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .main-nav button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 15px 20px;
+            margin: 0;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s, border-bottom 0.3s;
+        }
+        .main-nav button:hover:not(.active) {
+            background-color: #16a085; /* Turquesa más oscuro */
+        }
+        .main-nav button.active {
+            background-color: #3498db; /* Azul vibrante para pestaña activa */
+            border-bottom: 3px solid white;
+            font-weight: bold;
+        }
+
+        /* --- CONTENIDO PRINCIPAL Y SECCIONES --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .content-section {
+            display: none; /* Oculta todas las secciones por defecto */
+            padding: 20px 0;
+            animation: fadeIn 0.5s;
+        }
+        .content-section.active {
+            display: block; /* Muestra solo la sección activa */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- ESTILOS DE CATEGORÍAS Y ARTÍCULOS --- */
+        h2 {
+            color: #e67e22; /* Naranja para títulos principales */
+            border-bottom: 2px solid #bdc3c7;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #3498db; /* Azul vibrante */
+            margin-top: 20px;
+        }
+        .sub-nav {
+            margin-top: 15px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .sub-nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            padding: 8px 12px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-size: 0.9em;
+        }
+        .sub-nav a:hover {
+            background-color: #bdc3c7;
+        }
+        
+        .bitacora, .voto, .reflexion {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #dcdde1;
+            background-color: #fcfcfc;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PROYECTO ÉTICO INDIVIDUAL</h1>
+        <p style="font-size: 1.2em; margin-top: 10px;">Cristian Cifuentes: <em>Codificar con inteligencia, vivir con integridad.</em></p>
+    </header>
+
+    <nav class="main-nav">
+        <button onclick="changeTab('portada')" data-tab="portada" class="active">Portada</button>
+        <button onclick="changeTab('introduccion')" data-tab="introduccion">Introducción</button>
+        <button onclick="changeTab('principios')" data-tab="principios">Principios para una Vida Plena</button>
+        <button onclick="changeTab('votos')" data-tab="votos">Los 7 Votos del Éxito</button>
+        <button onclick="changeTab('reflexiones')" data-tab="reflexiones">Reflexiones</button>
+        <button onclick="changeTab('discurso')" data-tab="discurso">Discurso Final</button>
+    </nav>
+
+    <div class="container">
+
+        <section id="portada" class="content-section active">
+            <h2>✨ Portada</h2>
+            
+            <h3>Título del proyecto: <strong>"Proyecto Ético: Código y Conciencia"</strong></h3>
+            <p><strong>Nombre completo:</strong> Cristian Cifuentes</p>
+            <p><strong>Frase inspiradora como lema personal:</strong> <em>Codificar con inteligencia, vivir con integridad.</em></p>
+            
+        </section>
+
+        <section id="introduccion" class="content-section">
+            <h2>📝 Introducción</h2>
+            <p>Este proyecto ético individual es una bitácora de mi compromiso personal y profesional con los valores que moldean una vida plena. Como futuro Ingeniero en Sistemas, entiendo que la tecnología es una herramienta de doble filo: su impacto depende enteramente de la ética de quien la diseña y la implementa. El objetivo es impulsar mis competencias profesionales y personales mediante la práctica consciente de los <strong>Principios para una Vida Plena</strong>, los <strong>7 Votos del Éxito</strong> y las reflexiones del libro <strong>La vida no es lo que te imaginas</strong>.</p>
+            <p>A través de las siguientes categorías, documentaré mis aprendizajes y desafíos, buscando integrar una filosofía de vida donde la excelencia técnica (el "código") esté siempre alineada con la rectitud moral (la "conciencia"). Esta práctica no solo busca mi crecimiento individual, sino también asegurar que mi futuro trabajo en el campo de la tecnología contribuya positivamente a la sociedad, combatiendo la desinformación, protegiendo la privacidad y promoviendo la justicia digital.</p>
+        </section>
+
+        <section id="principios" class="content-section">
+            <h2>🌟 Principios para una Vida Plena</h2>
+
+            <div class="sub-nav">
+                <strong>Bitácoras (Navegación Interna):</strong>
+                <a href="#principio_comunicacion">Comunicación</a> |
+                <a href="#principio_comprender">Comprender a las personas</a> |
+                <a href="#principio_motivar">Motivar a las personas</a> |
+                <a href="#principio_justicia">Justicia</a> |
+                <a href="#principio_critica">Crítica</a> |
+                <a href="#principio_perdon">Perdón</a> |
+                <a href="#principio_confiar">Confiar en Dios</a> |
+                <a href="#principio_integridad">Integridad</a>
+            </div>
+
+            <article id="principio_comunicacion" class="bitacora">
+                <h3>Principio Ético Aplicado: Comunicación</h3>
+                <p><strong>Definición del principio:</strong> Capacidad de expresar ideas, sentimientos e información de manera clara, asertiva y respetuosa, asegurando que el mensaje sea comprendido fielmente por el receptor. Implica escuchar activamente y adaptar el lenguaje al contexto.</p>
+                <p><strong>Fecha de la práctica:</strong> Semana 1: 21 de octubre</p>
+                
+                <h4>Entorno:</h4>
+                <ul>
+                    <li><strong>Personal:</strong> Énfasis en ser más claro al expresar mis necesidades.</li>
+                    <li><strong>Laboral (Académico):</strong> Aplicado en un proyecto grupal de desarrollo de software.</li>
+                </ul>
+                
+                <h4>Situación Específica:</h4>
+                <p>Durante la planificación de un módulo complejo para un proyecto universitario, mi compañero no entendía el flujo lógico que propuse. En lugar de asumir que "no entendía", apliqué el principio deteniéndome, validando su perspectiva y usando diagramas de flujo y un lenguaje menos técnico (metáforas cotidianas) para explicar la arquitectura. Esto permitió que él no solo comprendiera, sino que también aportara una solución a un error en mi diseño inicial.</p>
+                
+                <h4>Reflexión Ética:</h4>
+                <ul>
+                    <li><strong>¿Qué aprendió al vivir esta práctica?</strong> Aprendí que la comunicación no es solo "decir", sino asegurar la comprensión mutua. La paciencia y la humildad son clave para adaptar mi comunicación técnica a oyentes no técnicos, una habilidad vital en la Ingeniería.</li>
+                    <li><strong>¿Qué emociones se presentaron?</strong> Inicialmente, frustración. Luego, calma y satisfacción al ver que el problema se resolvía eficazmente gracias al cambio de enfoque.</li>
+                    <li><strong>¿Hubo desafíos al aplicar el principio?</strong> El principal desafío fue vencer mi "sesgo de conocimiento" (la creencia de que lo que es obvio para mí lo es para todos) y controlar el impulso de responder a la defensiva.</li>
+                    <li><strong>¿Cómo cambió su relación con los demás?</strong> Mejoró la confianza con mi compañero. Él se sintió valorado y la dinámica del equipo se volvió más colaborativa.</li>
+                </ul>
+
+                <h4>Impacto:</h4>
+                <ul>
+                    <li><strong>¿Qué efecto tuvo su acción en el entorno?</strong> Se eliminó un cuello de botella en el desarrollo. El ambiente del equipo pasó de tenso a productivo.</li>
+                    <li><strong>¿Alguien se vio positivamente influenciado?</strong> Todo el equipo se benefició de la claridad, y mi compañero ganó seguridad para preguntar en el futuro.</li>
+                    <li><strong>¿Qué cambios éticos o actitudinales pudo observar?</strong> El equipo adoptó una actitud de "verificación de entendimiento" antes de avanzar en tareas complejas.</li>
+                </ul>
+
+                <h4>Compromiso a futuro:</h4>
+                <ul>
+                    <li><strong>¿Qué mejoraría?</strong> Ser proactivo en el uso de herramientas visuales (diagramas) desde el inicio.</li>
+                    <li><strong>¿Cómo puede fortalecer ese principio en su vida diaria?</strong> Practicar la técnica de paráfrasis al escuchar: repetir lo que entiendo para asegurar que capté el mensaje del otro.</li>
+                </ul>
+
+                <p><strong>Frase de Compromiso Final:</strong> La claridad en mi código será igual de rigurosa que la claridad en mis palabras.</p>
+            </article>
+            
+            <article id="principio_comprender" class="bitacora">
+                <h3>Principio Ético Aplicado: Comprender a las personas</h3>
+                <p><strong>Definición del principio:</strong> Capacidad de ver la situación desde la perspectiva del otro, reconociendo sus emociones, circunstancias y motivaciones, sin necesariamente aprobar su conducta, sino para entender su humanidad y contexto.</p>
+                <p><strong>Fecha de la práctica:</strong> Semana 2: 28 de octubre</p>
+                
+                <h4>Entorno:</h4>
+                <ul>
+                    <li><strong>Familiar:</strong> Interacción con un familiar que pasa por una crisis laboral.</li>
+                </ul>
+                
+                <h4>Situación Específica:</h4>
+                <p>Mi primo, quien es ingeniero civil, estaba molesto por no conseguir el ascenso que esperaba, desquitándose con comentarios sarcásticos en casa. Mi reacción inicial fue juzgarlo por su falta de dominio propio. Al aplicar el principio, me esforcé por ver que su ira era producto de una profunda inseguridad y frustración ante un objetivo incumplido. Lo escuché sin interrumpir, validé su esfuerzo y solo luego ofrecí una perspectiva tranquila y no de juicio.</p>
+                
+                <h4>Reflexión Ética:</h4>
+                <ul>
+                    <li><strong>¿Qué aprendió al vivir esta práctica?</strong> Que la empatía desactiva el conflicto. En la ingeniería, lidiaremos con usuarios frustrados; esta práctica me enseña a priorizar la solución de su dolor (la frustración) antes de defender mi sistema.</li>
+                    <li><strong>¿Qué emociones se presentaron?</strong> Al inicio, impaciencia. Después, compasión y alivio por haber podido ser un soporte en lugar de un crítico.</li>
+                    <li><strong>¿Hubo desafíos al aplicar el principio?</strong> Sí, evitar la tentación de ofrecer soluciones técnicas o consejos no solicitados, centrándome solo en escuchar.</li>
+                    <li><strong>¿Cómo cambió su relación con los demás?</strong> Mi primo me agradeció por no sermonearlo. La relación se fortaleció en la confianza de que puedo ser un refugio emocional.</li>
+                </ul>
+
+                <h4>Impacto:</h4>
+                <ul>
+                    <li><strong>¿Qué efecto tuvo su acción en el entorno?</strong> Se restableció la calma en el ambiente familiar.</li>
+                    <li><strong>¿Alguien se vio positivamente influenciado?</strong> Mi primo, al sentirse comprendido, pudo expresar mejor su plan para el día siguiente.</li>
+                    <li><strong>¿Qué cambios éticos o actitudinales pudo observar?</strong> En mí, la adopción de la "pausa empática" antes de reaccionar.</li>
+                </ul>
+
+                <p><strong>Frase de Compromiso Final:</strong> El mejor diagnóstico de un sistema o una persona empieza por una escucha atenta y comprensiva.</p>
+            </article>
+
+            <article id="principio_motivar" class="bitacora">
+                <h3>Principio Ético Aplicado: Motivar a las personas</h3>
+                <p><strong>Definición del principio:</strong> Impulsar a otros a alcanzar su máximo potencial mediante el reconocimiento sincero de sus esfuerzos, el fomento de la confianza en sus capacidades y la creación de un entorno de respeto y justicia.</p>
+                <p><strong>Fecha de la práctica:</strong> Semana 3: 4 de noviembre</p>
+                
+                <h4>Entorno:</h4>
+                <ul>
+                    <li><strong>Laboral (Académico):</strong> Trabajo con un compañero que está a punto de abandonar la materia.</li>
+                </ul>
+                
+                <h4>Situación Específica:</h4>
+                <p>Un compañero de clase estaba abrumado por un fallo en la codificación de un algoritmo, considerando dejar el curso. Apliqué el principio recordándole ejemplos específicos de tareas anteriores donde él había sobresalido (motivación intrínseca), enfocando el problema no como un fracaso total, sino como un **bug** que, al ser resuelto, lo haría más fuerte. Le ayudé a dividir el problema en pasos pequeños y le ofrecí mi tiempo, no para hacer el trabajo, sino para guiarlo en el proceso.</p>
+                
+                <h4>Reflexión Ética:</h4>
+                <ul>
+                    <li><strong>¿Qué aprendió al vivir esta práctica?</strong> Que la motivación ética se basa en el valor del otro. No se trata de manipulación, sino de restaurar la perspectiva y la confianza. En un equipo de TI, motivar a mis compañeros a seguir aprendiendo es una responsabilidad.</li>
+                    <li><strong>¿Qué emociones se presentaron?</strong> Al inicio, preocupación por su estado. Luego, alegría genuina al verlo recuperar el control y empezar a trabajar de nuevo.</li>
+                    <li><strong>¿Hubo desafíos al aplicar el principio?</strong> Mantener la línea de la ayuda (motivación) sin cruzar a la dependencia (hacer el trabajo por él).</li>
+                    <li><strong>¿Cómo cambió su relación con los demás?</strong> Afiancé una amistad y un respeto mutuo. El compañero terminó el proyecto con éxito.</li>
+                </ul>
+
+                <h4>Impacto:</h4>
+                <ul>
+                    <li><strong>¿Qué efecto tuvo su acción en el entorno?</strong> Se mantuvo la integración del equipo y se evitó la deserción de un compañero valioso.</li>
+                    <li><strong>¿Alguien se vio positivamente influenciado?</strong> Mi compañero, quien no solo salvó la materia, sino que recuperó la fe en su capacidad.</li>
+                </ul>
+
+                <p><strong>Frase de Compromiso Final:</strong> La mejor recompensa de mi conocimiento es usarlo para encender la luz de la capacidad en otros.</p>
+            </article>
+
+            <article id="principio_justicia" class="bitacora">
+                <h3>Principio Ético Aplicado: Justicia</h3>
+                <p><strong>Definición del principio:</strong> Dar a cada persona lo que le corresponde según sus derechos, méritos o necesidades, actuando con equidad, imparcialidad e integridad, buscando siempre el bien común.</p>
+                <p><strong>Fecha de la práctica:</strong> Semana 4: 11 de noviembre</p>
+                
+                <h4>Entorno:</h4>
+                <ul>
+                    <li><strong>Laboral (Académico):</strong> Evaluación de contribuciones en un proyecto grupal.</li>
+                </ul>
+                
+                <h4>Situación Específica:</h4>
+                <p>En la etapa final de un proyecto, dos compañeros reportaron haber trabajado por igual. Sin embargo, yo sabía que uno había invertido significativamente más tiempo y calidad en el código base. Al hacer la evaluación de pares para el profesor, apliqué el principio basándome en los repositorios de **Git** y la revisión de código, asignando una calificación diferencial que reflejaba la contribución real, a pesar de la presión social de "no hacer olas". Mi justificación se basó en la evidencia objetiva.</p>
+                
+                <h4>Reflexión Ética:</h4>
+                <ul>
+                    <li><strong>¿Qué aprendió al vivir esta práctica?</strong> Que la justicia requiere coraje y se apoya en la objetividad. Como ingeniero, mis decisiones sobre sistemas (como el diseño de algoritmos de equidad) deben basarse en datos, no en sentimientos.</li>
+                    <li><strong>¿Qué emociones se presentaron?</strong> Nerviosismo ante el posible conflicto, pero luego una profunda paz al saber que actué con transparencia.</li>
+                    <li><strong>¿Hubo desafíos al aplicar el principio?</strong> El mayor desafío fue enfrentar la incomodidad de un compañero.</li>
+                    <li><strong>¿Cómo cambió su relación con los demás?</strong> El compañero que sí trabajó sintió un gran respeto por mi imparcialidad. El otro entendió que la calidad de su esfuerzo debe igualar su expectativa de recompensa.</li>
+                </ul>
+
+                <p><strong>Frase de Compromiso Final:</strong> La justicia es el algoritmo más estricto, pero produce los resultados más estables.</p>
+            </article>
+            
+            <article id="principio_critica" class="bitacora">
+                <h3>Principio Ético Aplicado: Crítica</h3>
+                <p><strong>Definición del principio:</strong> La capacidad de evaluar objetivamente ideas, acciones o sistemas (ajenos o propios) de manera constructiva, buscando el mejoramiento continuo, evitando el juicio personal y centrándose en el desempeño o el proceso.</p>
+                <p><strong>Fecha de la práctica:</strong> Semana 5: 18 de noviembre</p>
+                
+                <h4>Entorno:</h4>
+                <ul>
+                    <li><strong>Laboral (Académico):</strong> Revisión del código fuente de un compañero.</li>
+                </ul>
+                
+                <h4>Situación Específica:</h4>
+                <p>Tuve que revisar el código de otro estudiante que contenía fallas de seguridad evidentes. En lugar de criticar al "programador" (ej. "Eres descuidado"), critiqué el "código" y el "proceso" (ej. "Esta función no sanitiza la entrada de datos, lo que abre una vulnerabilidad XSS, mejoramos esto con..."). Apliqué la crítica de manera privada, específica y siempre ofreciendo la solución o el recurso para corregirlo.</p>
+                
+                <h4>Reflexión Ética:</h4>
+                <ul>
+                    <li><strong>¿Qué aprendió al vivir esta práctica?</strong> Que la crítica constructiva es un servicio. Es fácil destruir; es ético construir. En el mundo de la programación, el **code review** ético es esencial para la calidad del producto final y el desarrollo del colega.</li>
+                    <li><strong>¿Qué emociones se presentaron?</strong> Concentración y la necesidad de ser meticuloso para no ofender ni equivocarme en mi análisis.</li>
+                    <li><strong>¿Hubo desafíos al aplicar el principio?</strong> Evitar la arrogancia al señalar errores. Tuve que recordarme que todos hemos escrito código con fallas.</li>
+                    <li><strong>¿Cómo cambió su relación con los demás?</strong> El compañero tomó la crítica de manera positiva, agradeciendo que no lo expuso. Me pidió revisar sus futuros trabajos.</li>
+                </ul>
+
+                <p><strong>Frase de Compromiso Final:</strong> La crítica debe ser como el debugging: precisa, necesaria, y orientada a la solución, no a la destrucción.</p>
+            </article>
+            
+            <article id="principio_perdon" class="bitacora">
+                <h3>Principio Ético Aplicado: Perdón</h3>
+                <p><strong>Definición del principio:</strong> El acto voluntario de liberar el resentimiento y la ira hacia alguien que nos ha ofendido, restaurando la paz interior y, en la medida de lo posible, la relación. No es olvidar, sino anular el poder destructivo de la ofensa.</p>
+                <p><strong>Fecha de la práctica:</strong> Semana 6: 25 de noviembre</p>
+                
+                <h4>Entorno:</h4>
+                <ul>
+                    <li><strong>Personal/Social:</strong> Una deslealtad menor en un círculo de amigos.</li>
+                </ul>
+                
+                <h4>Situación Específica:</h4>
+                <p>Un amigo usó información confidencial sobre mi situación académica para justificar una excusa ante un profesor, poniéndome en una posición incómoda. Me sentí traicionado. En lugar de guardar rencor, decidí abordar la situación directamente, escuchar su disculpa (que fue sincera) y ofrecerle mi perdón, enfocándome en restablecer la confianza en el futuro, en lugar de castigarlo por el pasado. Me di cuenta de que mi propia paz dependía de este acto.</p>
+                
+                <h4>Reflexión Ética:</h4>
+                <ul>
+                    <li><strong>¿Qué aprendió al vivir esta práctica?</strong> Que el perdón es una decisión activa y la única forma de evitar la contaminación emocional. Profesional y éticamente, guardar resentimiento sabotea la colaboración futura en cualquier equipo.</li>
+                    <li><strong>¿Qué emociones se presentaron?</strong> Dolor inicial, luego una gran sensación de ligereza y autocontrol al perdonar.</li>
+                    <li><strong>¿Hubo desafíos al aplicar el principio?</strong> Vencer el orgullo y la tentación de "darle una lección".</li>
+                    <li><strong>¿Cómo cambió su relación con los demás?</strong> La relación se reconstruyó sobre una base de honestidad más profunda, sabiendo ambos que la confianza es valiosa.</li>
+                </ul>
+
+                <p><strong>Frase de Compromiso Final:</strong> Perdonar es liberar memoria para nuevos y mejores procesos.</p>
+            </article>
+
+            <article id="principio_confiar" class="bitacora">
+                <h3>Principio Ético Aplicado: Confiar en Dios</h3>
+                <p><strong>Definición del principio:</strong> Creer en una fuerza o propósito trascendente que da sentido a la vida y que ofrece paz y esperanza ante las situaciones que escapan a mi control o entendimiento humano.</p>
+                <p><strong>Fecha de la práctica:</strong> Semana 7: 2 de diciembre</p>
+                
+                <h4>Entorno:</h4>
+                <ul>
+                    <li><strong>Personal:</strong> Ansiedad ante la incertidumbre del futuro profesional.</li>
+                </ul>
+                
+                <h4>Situación Específica:</h4>
+                <p>Tuve una semana con varias entrevistas de prácticas laborales y la presión por conseguir una posición de alto nivel era inmensa. Sentí un gran temor al rechazo. Apliqué el principio entregando el resultado a Dios. Hice mi mejor esfuerzo en la preparación y en las entrevistas, pero acepté que el resultado final estaba fuera de mi control, confiando en que se me guiaría al lugar que me corresponde. Esto me permitió enfocarme en la excelencia de mi esfuerzo en lugar de la angustia por el resultado.</p>
+                
+                <h4>Reflexión Ética:</h4>
+                <ul>
+                    <li><strong>¿Qué aprendió al vivir esta práctica?</strong> Que mi paz no debe depender de mi rendimiento (que es limitado), sino de mi fe (que es incondicional). Esto me permite tomar riesgos éticos sin temer la pérdida, porque mi valor no se mide por mis logros.</li>
+                    <li><strong>¿Qué emociones se presentaron?</strong> Ansiedad que se transformó en calma y enfoque.</li>
+                    <li><strong>¿Hubo desafíos al aplicar el principio?</strong> Detener el ciclo de pensamiento obsesivo de querer controlar cada variable.</li>
+                    <li><strong>¿Cómo cambió su relación con los demás?</strong> Pude ofrecer tranquilidad a mis padres, quienes también estaban nerviosos por el proceso.</li>
+                </ul>
+
+                <p><strong>Frase de Compromiso Final:</strong> Planificaré con la mente de un ingeniero, y confiaré con el alma de un creyente.</p>
+            </article>
+
+            <article id="principio_integridad" class="bitacora">
+                <h3>Principio Ético Aplicado: Integridad</h3>
+                <p><strong>Definición del principio:</strong> La cualidad de ser coherente y honesto en todas las situaciones, manteniendo la consistencia entre lo que se piensa, se dice y se hace, especialmente cuando nadie está mirando.</p>
+                <p><strong>Fecha de la práctica:</strong> Semana 8: 9 de diciembre</p>
+                
+                <h4>Entorno:</h4>
+                <ul>
+                    <li><strong>Laboral (Académico):</strong> Entrega de la tarea final de un curso de programación.</li>
+                </ul>
+                
+                <h4>Situación Específica:</h4>
+                <p>En la tarea final, me enfrenté a un pequeño problema de código que podía resolverse fácilmente con una línea de código copiada de un foro de internet sin citar, lo cual era casi imperceptible. Apliqué el principio optando por citar el fragmento correctamente como "pseudo-código de referencia" y esforzándome por reescribirlo para que fuera original y funcionalmente superior, a pesar de que nadie habría notado la omisión. La integridad era más valiosa que el minuto ahorrado.</p>
+                
+                <h4>Reflexión Ética:</h4>
+                <ul>
+                    <li><strong>¿Qué aprendió al vivir esta práctica?</strong> Que la integridad es el único estándar aceptable para un profesional. En el mundo de software, la integridad en la atribución y la calidad del código es fundamental para evitar problemas legales y técnicos a largo plazo.</li>
+                    <li><strong>¿Qué emociones se presentaron?</strong> Una satisfacción silenciosa, sabiendo que mi trabajo era 100% mío en términos de esfuerzo y ética.</li>
+                    <li><strong>¿Hubo desafíos al aplicar el principio?</strong> La pereza y la justificación de que "solo era una línea" o "todos lo hacen".</li>
+                    <li><strong>¿Cómo cambió su relación con los demás?</strong> Aumentó mi auto-respeto y me posicionó como un modelo de conducta para mis compañeros en la honestidad académica.</li>
+                </ul>
+
+                <p><strong>Frase de Compromiso Final:</strong> Mi valor ético es la arquitectura inmutable de mi carácter, y mi código siempre la reflejará.</p>
+            </article>
+
+        </section>
+
+        <section id="votos" class="content-section">
+            <h2>🏆 Los 7 Votos del Éxito</h2>
+
+            <div class="sub-nav">
+                <strong>Votos:</strong>
+                <a href="#voto_honestidad">Honestidad</a> |
+                <a href="#voto_generosidad">Generosidad</a> |
+                <a href="#voto_trabajo">Trabajo duro</a> |
+                <a href="#voto_humildad">Humildad</a> |
+                <a href="#voto_planificacion">Planificación efectiva</a> |
+                <a href="#voto_sentido_comun">Sentido común</a> |
+                <a href="#voto_dominio">Dominio propio</a>
+            </div>
+
+            <article id="voto_honestidad" class="voto">
+                <h3>1. Nombre del Voto: Honestidad Radical</h3>
+                
+                <h4>Propósito:</h4>
+                <p>Juro vivir y trabajar con absoluta sinceridad en mis interacciones, mis reportes y mi código. La honestidad es el firewall de mi reputación y la base de la confianza que me hará un profesional respetado en la Ingeniería.</p>
+
+                <h4>Ámbitos de Aplicación:</h4>
+                
+                <h5>Personal:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La coherencia entre mi ser interno y mi expresión externa.</li>
+                    <li><strong>Actitud a reforzar:</strong> La valentía para decir la verdad, incluso cuando es incómoda.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> El miedo al fracaso (superándolo al reportar errores rápidamente) y la autojustificación (superándolo con autoevaluación constante).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>No procrastinar en el reporte de problemas o bugs, asumiendo mi responsabilidad.</li>
+                            <li>Ser transparente en mis logros académicos, citando siempre mis fuentes y no plagiando código.</li>
+                            <li>Mantener mi palabra en compromisos personales y de tiempo.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Familiar:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La confianza incondicional de mis seres queridos.</li>
+                    <li><strong>Actitud a reforzar:</strong> La franqueza amorosa en temas delicados.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> Las "mentiras piadosas" (superándolas con tacto y verdad) y el ocultamiento de problemas (superándolo con la apertura de diálogo).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Comunicar mis desafíos sin exagerar ni minimizar.</li>
+                            <li>Ser honesto sobre mis finanzas y decisiones importantes.</li>
+                            <li>Admitir errores sin culpar a otros miembros de la familia.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Laboral:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La integridad profesional y la credibilidad.</li>
+                    <li><strong>Actitud a reforzar:</strong> El profesionalismo al admitir limitaciones de conocimiento.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> El fraude académico (superándolo al respetar la propiedad intelectual) y el "código chapuza" (superándolo con documentación honesta y refactorización).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Nunca presentar código que no sea mío como propio.</li>
+                            <li>Estimar los tiempos de los proyectos con realismo, no con optimismo engañoso.</li>
+                            <li>Proveer retroalimentación constructiva y veraz a mis compañeros de equipo.</li>
+                        </ol>
+                    </li>
+                </ul>
+                
+                <p><strong>Frase de Compromiso Final:</strong> La verdad es el mejor algoritmo; siempre me llevará a la solución correcta.</p>
+            </article>
+
+            <article id="voto_generosidad" class="voto">
+                <h3>2. Nombre del Voto: Generosidad de Conocimiento</h3>
+                
+                <h4>Propósito:</h4>
+                <p>Defino la razón de este voto como la obligación de compartir mis talentos y recursos (especialmente el conocimiento técnico) sin esperar reciprocidad, reconociendo que el éxito del ecosistema tecnológico depende de la colaboración.</p>
+
+                <h4>Ámbitos de Aplicación:</h4>
+                
+                <h5>Personal:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> El espíritu de altruismo y la humildad intelectual.</li>
+                    <li><strong>Actitud a reforzar:</strong> La proactividad en el servicio y la desapego al reconocimiento.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> El ego intelectual (superándolo a través de la mentoría a principiantes) y la avaricia de conocimiento (superándolo compartiendo mis mejores apuntes o recursos de estudio).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Destinar 1 hora semanal a responder preguntas técnicas en foros o grupos de estudio.</li>
+                            <li>Ofrecer ayuda práctica a amigos o familiares sin esperar que me lo pidan (ej. configurar equipos, revisar currículums).</li>
+                            <li>Donar una pequeña porción de mis recursos a causas que promuevan la educación en tecnología.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Familiar:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> El apoyo incondicional y el tiempo de calidad.</li>
+                    <li><strong>Actitud a reforzar:</strong> La paciencia y la disposición a priorizar sus necesidades sobre mi tiempo de estudio no urgente.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La justificación del "estudio" como excusa para el aislamiento (superándolo designando tiempo exclusivo familiar) y el apego al dinero personal (superándolo contribuyendo proactivamente a los gastos del hogar).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Regalar mi tiempo, enseñando a mis familiares el uso seguro de la tecnología.</li>
+                            <li>Hacer favores y diligencias sin que me lo pidan, buscando aliviarles la carga.</li>
+                            <li>Ser el primero en ofrecer un elogio o reconocimiento por un logro familiar.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Laboral:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La cultura de código abierto y la transparencia.</li>
+                    <li><strong>Actitud a reforzar:</strong> La mentoría y el desprendimiento de mis "secretos" de productividad.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> El miedo a ser reemplazado por compartir (superándolo confiando en mi mejora continua) y la competencia desleal (superándolo elevando el estándar de todo el equipo).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Documentar exhaustivamente mi código para que el siguiente desarrollador lo entienda fácilmente.</li>
+                            <li>Compartir cualquier herramienta o técnica que mejore la productividad del equipo.</li>
+                            <li>Ofrecer críticas constructivas enfocadas en el crecimiento, no en la superioridad.</li>
+                        </ol>
+                    </li>
+                </ul>
+                
+                <p><strong>Frase de Compromiso Final:</strong> Mi legado será el conocimiento que he creado y el que he ayudado a florecer en otros.</p>
+            </article>
+            
+            <article id="voto_trabajo" class="voto">
+                <h3>3. Nombre del Voto: Diligencia Sostenible</h3>
+                
+                <h4>Propósito:</h4>
+                <p>Me comprometo a practicar la disciplina constante y el esfuerzo inteligente, entendiendo que el "trabajo duro" es la base de la excelencia técnica y no el simple agotamiento. Es el voto de la perseverancia en la calidad.</p>
+
+                <h4>Ámbitos de Aplicación:</h4>
+                
+                <h5>Personal:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La disciplina y la calidad de mi concentración.</li>
+                    <li><strong>Actitud a reforzar:</strong> La constancia, trabajando en ciclos definidos de alta concentración y descanso planificado.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La procrastinación (superándola aplicando la regla de los dos minutos) y el perfeccionismo paralizante (superándolo con entregas funcionales mínimas y mejorando por iteraciones).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Trabajar en una tarea técnica al menos 2 horas ininterrumpidas diarias, sin distracciones digitales.</li>
+                            <li>No depender de *atajos* en los estudios; comprender el fundamento antes de usar librerías complejas.</li>
+                            <li>Mantenerme al día con la documentación y los estándares de la industria, fuera de las horas de clase.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Familiar:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> Mi palabra y la seguridad económica futura de mi familia.</li>
+                    <li><strong>Actitud a reforzar:</strong> La proactividad en las responsabilidades domésticas, sin que se me pida.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La tendencia a delegar las tareas tediosas (superándolo tomando yo la iniciativa) y la pereza (superándola con horarios familiares claros de trabajo/estudio y descanso).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Terminar mis estudios en el tiempo propuesto, demostrando mi compromiso con mi futuro.</li>
+                            <li>Aplicar la misma diligencia que a mi código a las tareas del hogar.</li>
+                            <li>Asegurarme de que mis padres o familiares no tengan que preocuparse por mi compromiso académico.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Laboral:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La reputación de mi trabajo y la fiabilidad de mis sistemas.</li>
+                    <li><strong>Actitud a reforzar:</strong> La búsqueda continua de la optimización y la eficiencia del código.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La mentalidad de "ya funciona" (superándola con pruebas unitarias y de integración exhaustivas) y el miedo a refactorizar (superándolo con la mejora constante de la arquitectura).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>No entregar un proyecto hasta que haya pasado por una revisión de errores formal.</li>
+                            <li>Aceptar tareas difíciles con una actitud de crecimiento, no de queja.</li>
+                            <li>Superar la expectativa mínima de la tarea; buscar la excelencia, no solo el cumplimiento.</li>
+                        </ol>
+                    </li>
+                </ul>
+                
+                <p><strong>Frase de Compromiso Final:</strong> El verdadero trabajo duro se mide por la calidad silenciosa y la persistencia inquebrantable.</p>
+            </article>
+
+            <article id="voto_humildad" class="voto">
+                <h3>4. Nombre del Voto: Humildad Algorítmica</h3>
+                
+                <h4>Propósito:</h4>
+                <p>Voto practicar la humildad como la disposición a aprender de cualquiera y reconocer mis limitaciones y errores. En la ingeniería, la arrogancia es un bug que debe eliminarse, ya que ciega al programador ante mejores soluciones.</p>
+
+                <h4>Ámbitos de Aplicación:</h4>
+                
+                <h5>Personal:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La capacidad de auto-corrección y el crecimiento continuo.</li>
+                    <li><strong>Actitud a reforzar:</strong> La apertura a la crítica constructiva de cualquier fuente.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> El ego (superándolo recordando que los bugs existen en el código de todos, incluyendo el mío) y la necesidad de tener la última palabra (superándolo escuchando en lugar de preparar mi respuesta).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Pedir activamente retroalimentación sobre mi desempeño académico o laboral.</li>
+                            <li>Reconocer públicamente a quien me enseñó un concepto o me ayudó en un problema.</li>
+                            <li>No alardear de mis conocimientos, sino usarlos para enseñar.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Familiar:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> El respeto por la experiencia de mis mayores.</li>
+                    <li><strong>Actitud a reforzar:</strong> La paciencia para explicar temas tecnológicos a mis familiares sin condescendencia.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La impaciencia ante la lentitud de los demás (superándola con la gratitud por su apoyo) y el desprecio por los "métodos antiguos" (superándolo buscando la sabiduría detrás de sus consejos).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Pedir consejo a mis padres, incluso en temas donde me siento superior.</li>
+                            <li>Servir en casa en tareas humildes, como limpiar o lavar, sin buscar reconocimiento.</li>
+                            <li>Disculparme rápidamente cuando me equivoco con un familiar.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Laboral:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> El espíritu de colaboración y la calidad del producto final.</li>
+                    <li><strong>Actitud a reforzar:</strong> El reconocimiento de que el código es del equipo, no mío.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La actitud de "no fui yo" ante un fallo (superándolo asumiendo la responsabilidad grupal) y el rechazo a usar herramientas que no domino (superándolo aceptando la guía de expertos).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Aceptar el code review sin discutir, solo buscando entender y aplicar la mejora.</li>
+                            <li>Buscar al compañero más experimentado (o incluso al novato) para validar mis ideas más complejas.</li>
+                            <li>Nunca tomar crédito por el trabajo de otro.</li>
+                        </ol>
+                    </li>
+                </ul>
+                
+                <p><strong>Frase de Compromiso Final:</strong> La cima del conocimiento es saber cuánto me queda por aprender.</p>
+            </article>
+
+            <article id="voto_planificacion" class="voto">
+                <h3>5. Nombre del Voto: Planificación Ágil y Ética</h3>
+                
+                <h4>Propósito:</h4>
+                <p>Voto dedicar tiempo y esfuerzo a la planificación efectiva de mis metas y actividades, asegurando que mis recursos (tiempo, energía) se inviertan de la manera más productiva y alineada con mis valores éticos.</p>
+
+                <h4>Ámbitos de Aplicación:</h4>
+                
+                <h5>Personal:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> El tiempo y la energía mental.</li>
+                    <li><strong>Actitud a reforzar:</strong> La previsión y el enfoque a largo plazo.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La improvisación (superándola con una agenda diaria con prioridades) y la sobrecarga (superándola aprendiendo a decir "no" a compromisos que no aportan a mis metas éticas/profesionales).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Planificar mi semana cada domingo, asignando bloques de tiempo específicos para estudio, familia y descanso.</li>
+                            <li>Establecer metas SMART (específicas, medibles, alcanzables, relevantes, a tiempo) para mis proyectos.</li>
+                            <li>Revisar mis prioridades semanalmente, eliminando las que me alejen de mis valores.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Familiar:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La armonía y el tiempo de calidad.</li>
+                    <li><strong>Actitud a reforzar:</strong> La organización de eventos y responsabilidades compartidas.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La desorganización que genera estrés (superándola con calendarios compartidos) y las discusiones por malos entendidos (superándolas con la confirmación de planes).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Informar con anticipación mis horarios de estudio para no generar expectativas de tiempo libre.</li>
+                            <li>Planificar una actividad familiar de calidad al menos una vez al mes.</li>
+                            <li>Asignar y ejecutar mis responsabilidades domésticas dentro de un horario fijo.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Laboral:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La eficiencia y el cumplimiento de los compromisos (deadlines).</li>
+                    <li><strong>Actitud a reforzar:</strong> El manejo de riesgos y la capacidad de estimación.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> El optimismo excesivo al estimar (superándolo con buffers de tiempo y estimaciones de tres puntos) y el alcance descontrolado (scope creep) (superándolo con especificaciones claras y detalladas).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Dividir proyectos grandes en tareas pequeñas y medibles (metodología ágil).</li>
+                            <li>Documentar la planificación de riesgos al inicio de cada proyecto.</li>
+                            <li>Nunca comprometerme a un plazo que sé que es irrealista o que compromete la calidad del código.</li>
+                        </ol>
+                    </li>
+                </ul>
+                
+                <p><strong>Frase de Compromiso Final:</strong> La planificación no garantiza el futuro, pero maximiza mis posibilidades de actuar éticamente en él.</p>
+            </article>
+
+            <article id="voto_sentido_comun" class="voto">
+                <h3>6. Nombre del Voto: Sentido Común Pragmático</h3>
+                
+                <h4>Propósito:</h4>
+                <p>Juro aplicar el juicio sensato y la lógica práctica en todas mis decisiones, evitando soluciones excesivamente complejas o teóricas donde una respuesta simple y probada es más efectiva y ética. Es el voto de la pragmática inteligente.</p>
+
+                <h4>Ámbitos de Aplicación:</h4>
+                
+                <h5>Personal:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La eficiencia en la toma de decisiones diarias.</li>
+                    <li><strong>Actitud a reforzar:</strong> La simplicidad y el anclaje en la realidad.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La tendencia a complicar demasiado (superándola buscando la solución más simple) y la arrogancia de creer que siempre hay que reinventar la rueda (superándola con el uso de soluciones estándar probadas).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Priorizar el descanso y la alimentación adecuada sobre el estudio prolongado e improductivo.</li>
+                            <li>Elegir la ruta más segura, aunque no sea la más corta, en situaciones de riesgo.</li>
+                            <li>Consultar a expertos de campo antes de implementar una solución basada solo en la teoría.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Familiar:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La seguridad y el bienestar general del hogar.</li>
+                    <li><strong>Actitud a reforzar:</strong> La sobriedad en el gasto y la previsión en las emergencias.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> El gasto impulsivo (superándolo con presupuestos realistas) y la ignorancia de los riesgos básicos (superándolo con la revisión de sistemas de seguridad en casa).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Mantener la calma en situaciones de estrés familiar para tomar decisiones lógicas.</li>
+                            <li>Gastar de manera responsable para asegurar un fondo de emergencia.</li>
+                            <li>No intentar arreglar cosas que requieren un profesional, reconociendo mis límites.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Laboral:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La estabilidad del sistema y la facilidad de mantenimiento.</li>
+                    <li><strong>Actitud a reforzar:</strong> El minimalismo en el diseño de software (mantenerlo simple).</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La "ingeniería excesiva" (over-engineering) (superándola con la filosofía de "hacerlo funcionar, luego hacerlo bien, luego hacerlo rápido") y la negligencia en la documentación (superándola con comentarios claros en cada función).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Elegir la tecnología más simple y robusta que resuelva el problema, no la más moderna o compleja.</li>
+                            <li>Escribir código que sea legible por un compañero con menos experiencia.</li>
+                            <li>Evaluar siempre la relación costo-beneficio antes de proponer una solución costosa.</li>
+                        </ol>
+                    </li>
+                </ul>
+                
+                <p><strong>Frase de Compromiso Final:</strong> El sentido común es el compilador más rápido entre la teoría y la realidad.</p>
+            </article>
+
+            <article id="voto_dominio" class="voto">
+                <h3>7. Nombre del Voto: Autocontrol Sistémico</h3>
+                
+                <h4>Propósito:</h4>
+                <p>Voto ejercer el control consciente sobre mis acciones, impulsos y emociones, reconociendo que el Dominio Propio es la base de la disciplina ética y la profesionalidad. Sin autocontrol, cualquier otro valor es vulnerable al colapso.</p>
+
+                <h4>Ámbitos de Aplicación:</h4>
+                
+                <h5>Personal:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La paz mental y la salud física.</li>
+                    <li><strong>Actitud a reforzar:</strong> La templanza y la resiliencia ante el estrés.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La ira y la frustración (superándolas con pausas activas y ejercicios de respiración antes de reaccionar) y la adicción a las redes sociales/videojuegos (superándola con límites de tiempo estrictos y el uso de herramientas de productividad).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Respetar mis horarios de sueño y ejercicio para mantener la claridad mental.</li>
+                            <li>No reaccionar verbalmente o por escrito a un insulto o crítica antes de contar hasta diez.</li>
+                            <li>Cumplir los pequeños compromisos personales (ej. dieta, lectura) para fortalecer el músculo de la voluntad.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Familiar:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La paciencia y el respeto.</li>
+                    <li><strong>Actitud a reforzar:</strong> La calma en las discusiones y la escucha activa.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> La impaciencia ante la repetición de errores de otros (superándola con la comprensión) y la tendencia a culpar (superándola asumiendo siempre mi parte de responsabilidad).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>Mantener el tono de voz bajo durante las discusiones familiares, sin importar la intensidad.</li>
+                            <li>Terminar las tareas domésticas aunque me sienta cansado, sin quejarme.</li>
+                            <li>No tomar decisiones importantes bajo estrés emocional o presión externa.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h5>Laboral:</h5>
+                <ul>
+                    <li><strong>Valor a proteger:</strong> La reputación profesional y la estabilidad emocional en crisis.</li>
+                    <li><strong>Actitud a reforzar:</strong> La calma bajo presión y el enfoque en la solución.</li>
+                    <li><strong>Enemigos a vencer y cómo superarlos:</strong> El pánico ante un fallo crítico en el sistema (bug) (superándolo con un plan de acción definido previamente) y la impulsividad al escribir código (superándola revisando la documentación antes de codificar).</li>
+                    <li><strong>Compromiso (Mencione al menos 3 comportamientos):</strong>
+                        <ol>
+                            <li>No abandonar una tarea compleja por frustración, sino aplicar la técnica pomodoro o tomar un descanso corto.</li>
+                            <li>Responder los correos o mensajes críticos con un mínimo de 15 minutos de reflexión.</li>
+                            <li>Evitar el café o el azúcar excesivo para mantener una energía mental estable, no explosiva.</li>
+                        </ol>
+                    </li>
+                </ul>
+                
+                <p><strong>Frase de Compromiso Final:</strong> El dominio propio es el sistema operativo que permite que todos mis otros talentos corran sin fallar.</p>
+            </article>
+
+        </section>
+
+        <section id="reflexiones" class="content-section">
+            <h2>🧠 Reflexiones: La Vida no es lo que te Imaginas</h2>
+
+            <div class="sub-nav">
+                <strong>Capítulos:</strong>
+                <a href="#capitulo_1">Capítulo I. La cosmovisión</a> |
+                <a href="#capitulo_2">Capítulo II. La sabiduría</a> |
+                <a href="#capitulo_3">Capítulo III. La madurez</a> |
+                <a href="#capitulo_4">Capítulo IV. Los pensamientos equivocados</a> |
+                <a href="#capitulo_5">Capítulo V. Conceptos erróneos</a> |
+                <a href="#capitulo_6">Capítulo VI. La actitud</a> |
+                <a href="#capitulo_7">Capítulo VII. Las relaciones</a> |
+                <a href="#capitulo_8">Capítulo VIII. La familia</a>
+            </div>
+
+            <article id="capitulo_1" class="reflexion">
+                <h3>Capítulo Primero: La cosmovisión. El deber de elegir los valores que serán el fundamento de su vida.</h3>
+                <ul>
+                    <li><strong>¿Cuál es el contexto?</strong> Este capítulo se enfoca en cómo la "cosmovisión" —el lente a través del cual interpreto el mundo— determina mis decisiones. Destaca que la elección de valores fundamentales (no los impuestos, sino los conscientemente elegidos) es mi deber principal para construir un marco de vida sólido. Para un ingeniero, esto se traduce en elegir si los valores serán la <strong>utilidad</strong> o la <strong>ética</strong>.</li>
+                    <li><strong>¿Influye de alguna manera en su forma de pensar? Explique.</strong> Sí, influye profundamente. Me obliga a ser consciente de mi cosmovisión como profesional. Tiendo a valorar la eficiencia y la solución de problemas (propio de un ingeniero), pero este capítulo me recuerda que mi valor fundamental debe ser la <strong>Responsabilidad Social</strong> antes que la eficiencia pura. Pensar que "puedo construir algo" no significa que "debo construirlo", si viola un principio ético básico.</li>
+                    <li><strong>¿Provocó algún cambio en su estilo de vida? Explique.</strong> Sí. Ha reforzado mi decisión de elegir proyectos y grupos de estudio donde los compañeros comparten una alta integridad. En lugar de buscar solo al más inteligente, busco al más confiable y ético. En mi código, busco siempre la seguridad y la privacidad del usuario, incluso si requiere más tiempo de desarrollo, priorizando el valor del <strong>respeto al usuario</strong> sobre la entrega rápida.</li>
+                </ul>
+            </article>
+            
+            <article id="capitulo_2" class="reflexion">
+                <h3>Capítulo Segundo: La sabiduría. El deber de enfrentar las realidades y los desafíos sabiamente.</h3>
+                <ul>
+                    <li><strong>¿Cuál es el contexto?</strong> La sabiduría es presentada como el conocimiento aplicado y el entendimiento para tomar decisiones justas y prácticas. No es solo conocimiento teórico, sino la habilidad de discernir la mejor acción ante las realidades complejas y a menudo incómodas de la vida.</li>
+                    <li><strong>¿Influye de alguna manera en su forma de pensar? Explique.</strong> Me ha enseñado a diferenciar entre la <strong>inteligencia</strong> (saber programar un algoritmo) y la <strong>sabiduría</strong> (saber cuándo <em>no</em> se debe implementar ese algoritmo). Mi mente de ingeniero se enfoca en lo técnico, pero la sabiduría me obliga a considerar las implicaciones a largo plazo (el "qué pasaría si") y las consecuencias éticas de mis innovaciones.</li>
+                    <li><strong>¿Provocó algún cambio en su estilo de vida? Explique.</strong> Sí, me ha hecho más lento en la toma de decisiones. Antes, buscaba la solución más rápida. Ahora, busco la más robusta y la que cause menor impacto negativo. Me he comprometido a no aceptar proyectos que prometen ganancias rápidas a costa de la transparencia o la seguridad.</li>
+                </ul>
+            </article>
+
+            <article id="capitulo_3" class="reflexion">
+                <h3>Capítulo Tercero: La madurez. El deber de elegir convertirse en una persona madura.</h3>
+                <ul>
+                    <li><strong>¿Cuál es el contexto?</strong> La madurez no es automática con la edad, sino una elección activa que implica responsabilidad por las propias emociones, acciones y resultados. Incluye la capacidad de retrasar la gratificación y ver los fracasos como oportunidades de aprendizaje.</li>
+                    <li><strong>¿Influye de alguna manera en su forma de pensar? Explique.</strong> Me ayuda a ver los bugs y los errores de programación no como una humillación, sino como un <strong>proceso necesario</strong> de crecimiento. La madurez me exige poseer mi error, analizar la causa raíz (root cause analysis) y comprometerme con la solución, sin buscar culpables externos.</li>
+                    <li><strong>¿Provocó algún cambio en su estilo de vida? Explique.</strong> Empecé a asumir responsabilidades financieras que antes evitaba, planeando mi presupuesto con disciplina. Además, al recibir una calificación baja, en lugar de desanimarme, busco inmediatamente la retroalimentación del profesor para mejorar, demostrando madurez profesional.</li>
+                </ul>
+            </article>
+
+            <article id="capitulo_4" class="reflexion">
+                <h3>Capítulo Cuarto: Los pensamientos equivocados. Razón de la decepción.</h3>
+                <ul>
+                    <li><strong>¿Cuál es el contexto?</strong> Este capítulo se centra en identificar y corregir las distorsiones cognitivas y las expectativas irreales que conducen a la frustración y la decepción. Gran parte de nuestro sufrimiento proviene de nuestra interpretación incorrecta de la realidad.</li>
+                    <li><strong>¿Influye de alguna manera en su forma de pensar? Explique.</strong> Me hizo confrontar el "pensamiento equivocado" de que un *buen* ingeniero nunca tiene que buscar ayuda. Esta creencia me había generado decepción y aislamiento. Ahora entiendo que la colaboración es un signo de fortaleza, no de debilidad, y que los errores son parte de la curva de aprendizaje, no una prueba de ineptitud.</li>
+                    <li><strong>¿Provocó algún cambio en su estilo de vida? Explique.</strong> He adoptado el hábito de "testear" mis pensamientos. Cuando me siento decepcionado, pregunto: "¿Qué expectativa no realista estoy albergando?". Esto me permite corregir el pensamiento y reducir mi estrés, por ejemplo, aceptar que no puedo ser un experto en todos los lenguajes de programación a la vez.</li>
+                </ul>
+            </article>
+
+            <article id="capitulo_5" class="reflexion">
+                <h3>Capítulo Quinto: Conceptos erróneos. Percepciones equivocadas que afectan la vida.</h3>
+                <ul>
+                    <li><strong>¿Cuál es el contexto?</strong> Se abordan las ideas preconcebidas y los mitos culturales o personales que nos impiden ver la realidad con claridad, como el concepto erróneo de que la felicidad es un destino o que el éxito es solo acumulación material.</li>
+                    <li><strong>¿Influye de alguna manera en su forma de pensar? Explique.</strong> Me hizo cuestionar el concepto erróneo en el mundo de la ingeniería de que "más horas = más valor". Ahora entiendo que las largas horas de trabajo improductivas (cultura hustle) son una percepción equivocada de la diligencia. La ética me exige valorar la <strong>efectividad</strong> sobre la <strong>apariencia de estar ocupado</strong>.</li>
+                    <li><strong>¿Provocó algún cambio en su estilo de vida? Explique.</strong> Definitivamente. He establecido una línea clara entre mi vida laboral/académica y mi vida personal, evitando la adicción al trabajo que prevalece en la industria tecnológica. Ahora mido mi éxito por la calidad y el impacto de mi código, y no por el número de horas que paso frente a la pantalla.</li>
+                </ul>
+            </article>
+
+            <article id="capitulo_6" class="reflexion">
+                <h3>Capítulo Sexto: La actitud. El deber de elegir el contentamiento.</h3>
+                <ul>
+                    <li><strong>¿Cuál es el contexto?</strong> El capítulo enseña que la actitud es una elección diaria. El contentamiento no es pasividad, sino la capacidad de encontrar valor y gratitud en el presente, trabajando al mismo tiempo hacia un futuro mejor, sin que mi felicidad dependa de circunstancias externas.</li>
+                    <li><strong>¿Influye de alguna manera en su forma de pensar? Explique.</strong> Mi tendencia es ver los problemas y las carencias (lo que falta en mi código o en mi conocimiento). Este capítulo me instruye a adoptar una actitud de <strong>gratitud por las herramientas y el conocimiento ya adquirido</strong>. Esto me da la energía para enfrentar los desafíos sin caer en el pesimismo.</li>
+                    <li><strong>¿Provocó algún cambio en su estilo de vida? Explique.</strong> Empecé a practicar un diario de gratitud, listando las pequeñas victorias técnicas (un bug resuelto, un concepto comprendido). Esto me ha ayudado a evitar el desgaste emocional y a mantener una actitud positiva y resiliente frente a los inevitables fracasos en el desarrollo.</li>
+                </ul>
+            </article>
+
+            <article id="capitulo_7" class="reflexion">
+                <h3>Capítulo Séptimo: Las relaciones. El deber de elegir relaciones interpersonales saludables.</h3>
+                <ul>
+                    <li><strong>¿Cuál es el contexto?</strong> Se enfatiza que las personas que elegimos influyen directamente en nuestro carácter y éxito. Es nuestro deber ser selectivos y cultivar relaciones que nos desafíen positivamente y que se basen en el respeto mutuo, la honestidad y el apoyo ético.</li>
+                    <li><strong>¿Influye de alguna manera en su forma de pensar? Explique.</strong> Me ha hecho ver que no puedo ser un profesional ético si mis relaciones personales no lo son. Un equipo de desarrollo necesita confianza. Pensar en relaciones saludables me motiva a ser un <strong>compañero que agrega valor</strong>, no uno que resta con chismes o deslealtades. La confianza es el API más importante.</li>
+                    <li><strong>¿Provocó algún cambio en su estilo de vida? Explique.</strong> He puesto límites saludables a las personas que practican la crítica destructiva o la toxicidad. Invierto mi tiempo en "networking" con profesionales que demuestran una ética sólida y que me inspiran a ser un mejor ingeniero, no solo un mejor programador.</li>
+                </ul>
+            </article>
+
+            <article id="capitulo_8" class="reflexion">
+                <h3>Capítulo Octavo: La familia. El deber de ser un aporte sabio para la vida familiar.</h3>
+                <ul>
+                    <li><strong>¿Cuál es el contexto?</strong> La familia es vista como el primer y más importante laboratorio ético. Se subraya la obligación de ser un factor de estabilidad y sabiduría para el núcleo familiar, utilizando nuestros recursos y carácter para apoyar y edificar a nuestros parientes.</li>
+                    <li><strong>¿Influye de alguna manera en su forma de pensar? Explique.</strong> A menudo priorizo mis desafíos académicos, olvidando mi rol en el hogar. Este capítulo me recuerda que mi mayor proyecto de vida no es un software, sino mi familia. Mi conocimiento técnico debe usarse para su protección (ej. seguridad digital), no solo para mi beneficio personal.</li>
+                    <li><strong>¿Provocó algún cambio en su estilo de vida? Explique.</strong> Sí. Me convertí en el "asesor de seguridad digital" de la familia, enseñándoles sobre "phishing" y privacidad. Además, me he comprometido a dejar el teléfono fuera durante las comidas, priorizando la presencia total, demostrando que mi <strong>dominio propio</strong> empieza en casa.</li>
+                </ul>
+            </article>
+
+        </section>
+
+        <section id="discurso" class="content-section">
+            <h2>🎤 Discurso Final de su Proyecto Ético</h2>
+            
+            <p><strong>(El Legado del Código y la Conciencia)</strong></p>
+            
+            <p>Compañeros, mentores y amigos: Este proyecto comenzó como una tarea académica, pero ha evolucionado hacia la arquitectura fundamental de mi vida. He aprendido que la ética no es una capa superficial de mi profesión, sino el <strong>sistema operativo</strong> que dicta la estabilidad de todos mis procesos.</p>
+
+            <p>El camino de la Ingeniería en Sistemas es el camino de la creación, y la creación exige responsabilidad. Documentar los <strong>Principios para una Vida Plena</strong> me obligó a actuar con <strong>justicia</strong> y <strong>crítica constructiva</strong> en situaciones reales. Las bitácoras me enseñaron que el <strong>perdón</strong> y la <strong>comunicación</strong> son tan esenciales para un equipo como las APIs para un ecosistema. Los <strong>7 Votos del Éxito</strong> me dieron un código de conducta inmutable: a través de la <strong>honestidad radical</strong> y la <strong>planificación ética</strong>, he transformado el concepto de "trabajo duro" en "diligencia sostenible".</p>
+
+            <h3>Logros y Aprendizajes:</h3>
+            <p>Mi mayor logro ha sido integrar la ética en el nivel más bajo de mi pensamiento. Donde antes veía un desafío técnico, ahora veo un dilema moral. Aprendí que la <strong>humildad</strong> es la herramienta más poderosa de un ingeniero, pues solo quien es humilde está dispuesto a aceptar la retroalimentación y a aprender. El proyecto me ha enseñado a medir mi éxito no por la complejidad de mi código, sino por su <strong>impacto ético</strong> en la vida de los usuarios.</p>
+
+            <h3>Impacto Personal y Profesional:</h3>
+            <p>A nivel personal, tengo un mapa claro de mis valores, lo que me ha traído una profunda <strong>paz</strong> al reducir la ansiedad por el futuro. A nivel profesional, me comprometo a ser un <strong>Ingeniero Ético de Sistemas</strong>. Mi visión es modelar sistemas que no solo sean eficientes, sino también justos. Seré un profesional que no solo resuelve problemas técnicos, sino que también promueve la <strong>privacidad</strong>, la <strong>seguridad</strong> y la <strong>equidad</strong> en cada línea de código que escriba.</p>
+
+            <h3>Cierre:</h3>
+            <p>La tecnología avanza rápido, pero los principios de la vida permanecen inmutables. Mi compromiso es que mi código, en todos los sentidos, siempre refleje mi conciencia. Gracias.</p>
+        </section>
+        
+    </div>
+
+    <footer>
+        <p>© Proyecto Ético Individual. Cristian Cifuentes [Año de finalización del proyecto]</p>
+        <p>Desplegado utilizando HTML, CSS y JavaScript.</p>
+    </footer>
+    
+    <script>
+        function changeTab(tabId) {
+            // 1. Ocultar todas las secciones
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // 2. Mostrar la sección seleccionada
+            const activeSection = document.getElementById(tabId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+
+            // 3. Quitar 'active' de todos los botones
+            document.querySelectorAll('.main-nav button').forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // 4. Agregar 'active' al botón clickeado
+            document.querySelector(`.main-nav button[data-tab="${tabId}"]`).classList.add('active');
+            
+            // Opcional: Desplazar la ventana hacia la parte superior del contenido del contenedor (no de la página completa)
+            const container = document.querySelector('.container');
+            if (container) {
+                // Reinicia el scroll al inicio de la página para centrar la vista en el nuevo contenido
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Inicializar: mostrar la primera pestaña al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+             // Asegura que solo la portada esté activa al inicio
+             changeTab('portada'); 
+        });
+    </script>
+</body>
+</html>
